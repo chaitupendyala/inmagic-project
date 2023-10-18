@@ -11,7 +11,7 @@ def breakIntoIssues(issues):
     return ret
 
 # Function to clean and convert issue month names to their corresponding numbers
-def clean_issue_month(issue_month):
+def cleanIssueMonth(issue_month):
     issue_month = issue_month.lower().strip()
     issue_months = {'spring':'21', 'spr':'21', 'summer':'22', 'sum':'22', 'autum':'23', 'aut':'23', 'winter':'24', 'win':'24'}
     for month, month_number in issue_months.items():
@@ -39,7 +39,7 @@ def extractIssueNumberAndMonth(issue):
     if issueMonth:
         issueMonth = issueMonth.replace("[", "")
         issueMonth = issueMonth.replace("]", "")
-        issueMonth = clean_issue_month(issueMonth)
+        issueMonth = cleanIssueMonth(issueMonth)
 
     return [issueNumber, issueMonth]
 
